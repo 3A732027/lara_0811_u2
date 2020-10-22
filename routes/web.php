@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -43,14 +44,15 @@ Route::get('hello/{name?}', function ($name='Everybody') {
 Route::get('dashboard',function(){
     return 'dashboard';
 });
-*/
+
 Route::group(['prefix'=>'admin'],function(){
     Route::get('dashboard',function(){
-        return'admin dashboard';
+        return 'admin dashboard';
     });
     Route::get('dashboard1',function(){
         return'1';
     });
 });
+*/
 
-
+Route::get('/', [HomeController::class, 'index']);
